@@ -23,6 +23,7 @@
 In my EDA file I analyze the distribution of real-time energy prices and their relationships to the feature variables. Below are a few plots that emphasize the skewed distribution of LMP and its relationship to the feature set. See the EDA notebook for more detail. Below are some interesting results from the initial exploration. 
 
 - Both Real-Time and Day-Ahead prices are subject to extremely high outliers well above the mean.
+![alt text] (https://github.com/Lbongard/energy_project/blob/main/LMP_Dist.png?raw=true)
 
 - Among grid and price-related variables, Day-Ahead LMP and MW of Generation are most correlated with Real Time LMP
 
