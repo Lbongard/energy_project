@@ -26,8 +26,12 @@ In my EDA file I analyze the distribution of real-time energy prices and their r
 ![LMP_Dist](https://github.com/Lbongard/energy_project/assets/62773555/53ec4eab-a788-4f33-a8e9-3bb72a0ef5c9)
 
 - Among grid and price-related variables, Day-Ahead LMP and MW of Generation are most correlated with Real Time LMP
+![corr_heatmap](https://github.com/Lbongard/energy_project/assets/62773555/08123d5f-4634-4627-9232-437394ae47be)
 
 - Average Real-Time LMP experiences a ‘duck-like’ shape throughout the day, similar to the infamous CAISO net load “duck curve”
+![avg_RTLMP_by_hour](https://github.com/Lbongard/energy_project/assets/62773555/837c8b94-a281-4317-849d-c9b9c1267aaf)
+![CAISO_DuckCurve_720_469_80](https://github.com/Lbongard/energy_project/assets/62773555/9c732be1-0dcd-41cf-91d7-4e8d637bdf73)
+
 
 # Energy Prediction Models
 
