@@ -28,14 +28,24 @@ In my EDA file I analyze the distribution of real-time energy prices and their r
 - Among grid and price-related variables, Day-Ahead LMP and MW of Generation are most correlated with Real Time LMP
 ![corr_heatmap](https://github.com/Lbongard/energy_project/assets/62773555/08123d5f-4634-4627-9232-437394ae47be)
 
-- Average Real-Time LMP experiences a ‘duck-like’ shape throughout the day, similar to the infamous CAISO net load “duck curve”
+- Average Real-Time LMP experiences a ‘duck-like’ shape throughout the day, similar to the infamous CAISO net load “duck curve”. The similarity of the two curves are likely related to the same phenomenon — namely, the high supply of solar energy during the day and the large demand “ramp” in the evening hours when solar generation is subsiding.
 
 ![avg_RTLMP_by_hour](https://github.com/Lbongard/energy_project/assets/62773555/837c8b94-a281-4317-849d-c9b9c1267aaf)
+Source: https://www.energy.gov/eere/articles/confronting-duck-curve-how-address-over-generation-solar-energy
 ![CAISO_DuckCurve_720_469_80](https://github.com/Lbongard/energy_project/assets/62773555/9c732be1-0dcd-41cf-91d7-4e8d637bdf73)
 
 
 # Energy Prediction Models
 
+For my price prediction models, I predicted the simple average of the Real Time LMP 2 hours “in the future” (i.e., from the timestamp of the feature variables). I compare the results from 6 different models:
 
+- Persistence model: Used as a baseline model for comparison. Predicts the target LMP to be the same as the current price or the price 24 hours prior to the target time
+- Random Forest Regressor
+- XGBoost Regressor
+- Deep Neural Network (DNN)
+- Two Flavors of Recurrent Neural Networks (RNNs): Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) models. Unlike the other models, these take a 24-hour “lookback” period of the feature variables as an input. In my GRU model, I implement regularization and increase the number of epochs.
 
-Of all models, the Random Forest achieves the best performance for all metrics except Mean Absolute Percent Error. Interestingly, the 'current hour' persistence model has the lowest Mean Absolute Percent Error. Comparing observations where the Random Forest percentage error is much higher than the Persistence model percentage error, we can see that this phenomenon is likely driven by instances where the target value is close to 0. In other words, slight increases in over- or underprediction will lead to large increases in MAPE.
+Of all models, the Random Forest achieves the best performance for all metrics except Mean Absolute Percent Error. Interestingly, the 'current hour' persistence model has the lowest Mean Absolute Percent Error. Comparing observations where the Random Forest percentage error is much higher than the Persistence model percentage error, we can see that this phenomenon is likely driven by instances where the target value is close to 0. In other words, slight increases in over- or under-prediction will lead to large increases in MAPE.
+
+Analyzing feature importances, we can see that lagged real-time and day-ahead market prices are the most important variables used by the model when making predictions. The current hour's Real-Time price is the most important variable in predicting the LMP two hours in the future, likely explaining the relatively high performance of the baseline Persistence model. Some grid-condition variables such as generation / export also appear to be important to the model.
+![RF_Feature_Importances](https://github.com/Lbongard/energy_project/assets/62773555/14f71c1d-b64b-423e-8659-fe9640fa4dad)
