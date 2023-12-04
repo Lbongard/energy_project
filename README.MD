@@ -21,7 +21,7 @@
 
 ## Terminology
 The following terms and acronyms are used throughout the notebook
-- **Day-Ahead (DA) v. Real-Time (RT) markets:** The Day-Ahead market operates a day before the actual delivery of electricity and allows market participants to  schedule resources in advance based on their forecasts of electricity demand and generation availability for the next day. The Real-Time market operates in close to the supply of the electricity and is designed to address immediate changes in electricity demand and supply that occur in real-time. It allows for adjustments to be made to match the actual demand and supply conditions as closely as possible. 
+- **Day-Ahead (DA) v. Real-Time (RT) markets:** The Day-Ahead market operates a day before the actual delivery of electricity and allows market participants to schedule resources in advance based on their forecasts of electricity demand and generation availability for the next day. The Real-Time market operates on a 5-minute bases and is designed to address immediate changes in electricity demand and supply. The Real-Time market enables adjustments to match actual conditions as closely as possible.
 
 - **Locational Marginal Price (LMP)**:  LMP is a locational-based pricing system that reflects the marginal cost of supplying or consuming electricity at specific locations on the power grid. This represents the target variable that my models seek to predict.
 
