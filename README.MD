@@ -53,7 +53,7 @@ For my price prediction models, I predicted the simple average of the Real Time 
 - Two Flavors of Recurrent Neural Networks (RNNs): Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) models. Unlike the other models, these take a 24-hour “lookback” period of the feature variables as an input. In my GRU model, I implement regularization and increase the number of epochs.
 
 Of all models, the Random Forest achieves the best performance for all metrics except Mean Absolute Percent Error. Interestingly, the 'current hour' persistence model has the lowest Mean Absolute Percent Error. Comparing observations where the Random Forest percentage error is much higher than the Persistence model percentage error, we can see that this phenomenon is likely driven by instances where the target value is close to 0. In other words, slight increases in over- or under-prediction will lead to large increases in MAPE.
-<center>
+
 | Model             |   r2 |   rmse |   mae |   mape |
 |:------------------|-----:|-------:|------:|-------:|
 | persist_prev_day  | 0.41 |  68.19 | 27.75 |  24.78 |
@@ -63,6 +63,6 @@ Of all models, the Random Forest achieves the best performance for all metrics e
 | DNN               | 0.3  |  74.37 | 43.21 |  18.58 |
 | LSTM              | 0.44 |  67.03 | 32.56 |  30.59 |
 | GRU               | 0.59 |  57.27 | 25.4  |  20.93 |
-</center>
+
 Analyzing feature importances, we can see that lagged real-time and day-ahead market prices are the most important variables used by the model when making predictions. The current hour's Real-Time price is the most important variable in predicting the LMP two hours in the future, likely explaining the relatively high performance of the baseline Persistence model. Some grid-condition variables such as generation / export also appear to be important to the model.
 ![RF_Feature_Importances](https://github.com/Lbongard/energy_project/assets/62773555/14f71c1d-b64b-423e-8659-fe9640fa4dad)
