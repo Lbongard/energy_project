@@ -64,5 +64,7 @@ Of all models, the Random Forest achieves the best performance for all metrics e
 | LSTM              | 0.44 |  67.03 | 32.56 |  30.59 |
 | GRU               | 0.59 |  57.27 | 25.4  |  20.93 |
 
+![RF_Pred](https://github.com/Lbongard/energy_project/assets/62773555/4806a456-edfd-4777-9616-65eac1006ae8)
+
 Analyzing feature importances, we can see that lagged real-time and day-ahead market prices are the most important variables used by the model when making predictions. The current hour's Real-Time price is the most important variable in predicting the LMP two hours in the future, likely explaining the relatively high performance of the baseline Persistence model. Some grid-condition variables such as generation / export also appear to be important to the model.
 ![RF_Feature_Importances](https://github.com/Lbongard/energy_project/assets/62773555/14f71c1d-b64b-423e-8659-fe9640fa4dad)

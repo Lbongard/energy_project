@@ -3,8 +3,9 @@
 """
 Created on Wed Nov  8 20:18:20 2023
 
-@author: reidbongard
+@author: Open-Meteo, reidbongard
 """
+# Script below is from Open-Meteo's API unless otherwise indicated
 
 import pandas as pd
 import numpy as np
