@@ -44,7 +44,7 @@ Source: https://www.energy.gov/eere/articles/confronting-duck-curve-how-address-
 
 # Energy Prediction Models
 
-For my price prediction models, I predicted the simple average of the Real Time LMP 2 hours “in the future” (i.e., from the timestamp of the feature variables). I compare the results from 6 different models:
+For my price prediction models, I predicted the simple average of the Real Time LMP 2 hours “in the future” (i.e., from the timestamp of the feature variables). I compare the results from 6 different models. See notebook 'Models-LMP_Forecast.ipynb' for full details.
 
 - Persistence model: Used as a baseline model for comparison. Predicts the target LMP to be the same as the current price or the price 24 hours prior to the target time
 - Random Forest Regressor
